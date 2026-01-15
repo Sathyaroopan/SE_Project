@@ -1,25 +1,48 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-primary-btn: var(--p-btn);
+  --color-primary-btn-text: var(--p-btn-txt);
+  --color-primary-btn-hover: var(--p-btn-hov);
+  --color-secondary-btn: var(--s-btn);
+  --color-secondary-btn-text: var(--s-btn-txt);
+  --color-secondary-btn-hover: var(--s-btn-hov);
   --font-sans: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --bg: #ffffff;
+  --text: #171717;
+  --p-btn: #000000;
+  --p-btn-txt: #ffffff;
+  --p-btn-hov: #333333;
+  --s-btn: #f3f4f6;
+  --s-btn-txt: #171717;
+  --s-btn-hov: #e5e7eb;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --text: #ededed;
+  --p-btn: #4b5563;
+  --p-btn-hov: #6b7280;
+  --s-btn: #1f2937;
+  --s-btn-txt: #ededed;
+  --s-btn-hov: #374151;
+}
+
+@layer base {
+  *, ::after, ::before {
+    @apply transition-colors duration-300;
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
 }
