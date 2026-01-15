@@ -16,23 +16,26 @@
 
 :root {
   --bg: #ffffff;
-  --text: #171717;
-  --p-btn: #000000;
+  --text: #111827;
+  --border: #e5e7eb;
+  --p-btn: #111827;
   --p-btn-txt: #ffffff;
-  --p-btn-hov: #333333;
+  --p-btn-hov: #1f2937;
   --s-btn: #f3f4f6;
-  --s-btn-txt: #171717;
+  --s-btn-txt: #374151;
   --s-btn-hov: #e5e7eb;
 }
 
 [data-theme="dark"] {
-  --bg: #0a0a0a;
-  --text: #ededed;
-  --p-btn: #4b5563;
-  --p-btn-hov: #6b7280;
-  --s-btn: #1f2937;
-  --s-btn-txt: #ededed;
-  --s-btn-hov: #374151;
+  --bg: #09090b;
+  --text: #f4f4f5;
+  --border: #27272a;
+  --p-btn: #3f3f46;
+  --p-btn-txt: #ffffff;
+  --p-btn-hov: #52525b;
+  --s-btn: #18181b;
+  --s-btn-txt: #a1a1aa;
+  --s-btn-hov: #27272a;
 }
 
 @layer base {
