@@ -4,7 +4,7 @@ export default function Sidebar() {
   return (
     <aside className="w-64 border-r shadow-sm">
       <div className="p-6 text-xl font-bold">
-        Academic Planner
+        Icon
       </div>
 
       <nav className="flex flex-col gap-2 px-4">
