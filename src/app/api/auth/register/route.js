@@ -15,12 +15,20 @@ export async function POST(req) {
     password: hashedPassword,
   });
 
-  const token = signToken({ id: user._id });
+  const token = signToken({
+    id: user._id,
+    name: user.name,
+    rollNumber: user.rollNumber,
+  });
 
   const response = NextResponse.json({ message: "Registered" });
+
   response.cookies.set("token", token, {
     httpOnly: true,
-    secure: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/", 
+    maxAge: 60 * 60 * 24 * 7, 
   });
 
   return response;
