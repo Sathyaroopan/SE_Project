@@ -1,4 +1,5 @@
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { verifyToken } from "@/lib/jwt";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
@@ -8,15 +9,17 @@ export default async function ProtectedLayout({ children }) {
   const tokenCookie = cookieStore.get("token");
   const token = tokenCookie?.value;
 
+  if (!token) {
+    redirect("/login");
+  }
+
   let userName = "Student";
 
-  if (token) {
-    try {
-      const decoded = verifyToken(token);
-      userName = decoded.name || decoded.rollNumber || "Student";
-    } catch (err) {
-      console.log("Invalid token", err);
-    }
+  try {
+    const decoded = verifyToken(token);
+    userName = decoded.name || decoded.rollNumber || "Student";
+  } catch (err) {
+    redirect("/login");
   }
 
   return (
