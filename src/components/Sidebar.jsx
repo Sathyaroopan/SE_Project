@@ -60,7 +60,7 @@ export default function Sidebar() {
 
           <button
             onClick={() => setIsLogoutOpen(true)}
-            className="w-full text-left px-4 py-2.5 rounded-lg transition-all duration-200 bg-red-500/10 text-red-600 hover:bg-red-500 hover:text-white font-medium"
+            className="w-full text-left px-4 py-2.5 rounded-lg cursor-pointer transition-all duration-200 bg-red-500/10 text-red-600 hover:bg-red-500 hover:text-white font-medium"
           >
             Logout
           </button>
@@ -85,7 +85,7 @@ export default function Sidebar() {
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setIsLogoutOpen(false)}
-                className="flex-1 px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                className="flex-1 px-4 py-2 rounded-lg cursor-pointer bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               >
                 Cancel
               </button>
@@ -99,7 +99,7 @@ export default function Sidebar() {
                   setIsLogoutOpen(false);
                   window.location.href = "/login";
                 }}
-                className="flex-1 px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition-colors font-medium"
+                className="flex-1 px-4 py-2 rounded-lg cursor-pointer bg-red-500 text-white hover:bg-red-600 transition-colors font-medium"
               >
                 Logout
               </button>

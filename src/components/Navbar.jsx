@@ -39,7 +39,7 @@ export default function Navbar({ userName }) {
         {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
-          className="p-2 flex justify-center rounded-full bg-secondary-btn text-secondary-btn-text hover:bg-secondary-btn-hover transition-all"
+          className="p-2 flex justify-center cursor-pointer rounded-full bg-secondary-btn text-secondary-btn-text hover:bg-secondary-btn-hover transition-all"
         >
           <span
             className={`inline-block transition-transform duration-500 ${
