@@ -29,7 +29,11 @@ const UserSchema = new mongoose.Schema(
       minlength: 6, 
     },
 
-  
+    courses: {
+      type: [String],
+      default: [],
+    },
+
     dailyAvailableHours: {
       type: Number, 
       default: 4,
