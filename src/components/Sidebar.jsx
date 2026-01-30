@@ -34,6 +34,13 @@ export default function Sidebar() {
             </Link>
 
             <Link
+              href="/timetable"
+              className={`px-4 py-2.5 rounded-lg transition-all duration-200 ${getLinkStyles("/timetable")}`}
+            >
+              Timetable
+            </Link>
+
+            <Link
               href="/planner"
               className={`px-4 py-2.5 rounded-lg transition-all duration-200 ${getLinkStyles("/planner")}`}
             >
