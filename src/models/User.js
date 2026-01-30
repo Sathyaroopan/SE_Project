@@ -26,12 +26,12 @@ const UserSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      minlength: 6, // store HASHED password only
+      minlength: 6, 
     },
 
   
     dailyAvailableHours: {
-      type: Number, // hours per day user can study
+      type: Number, 
       default: 4,
       min: 0,
       max: 24,
@@ -43,7 +43,7 @@ const UserSchema = new mongoose.Schema(
       default: "evening",
     },
 
-    // ---- Ethics & Privacy ----
+  
     consentForAnalytics: {
       type: Boolean,
       default: true,
