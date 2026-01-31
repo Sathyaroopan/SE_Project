@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from 'next/image';
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -21,8 +22,24 @@ export default function Sidebar() {
       <aside className="flex flex-col w-64 border-r border-gray-200 dark:border-gray-800 bg-bg h-screen transition-colors">
         {/* Top Section */}
         <div className="flex-1">
-          <div className="p-6 text-xl font-bold text-text tracking-tight">
-            Icon
+          <div className="p-6">
+            <Image 
+              src="/new/logo_icon_light.png" 
+              alt="Site Logo" 
+              width={40} 
+              height={40} 
+              className="block dark:hidden"
+              priority 
+            />
+            
+            <Image 
+              src="/new/logo_icon_dark.png" 
+              alt="Site Logo" 
+              width={40} 
+              height={40} 
+              className="hidden dark:block"
+              priority 
+            />
           </div>
 
           <nav className="flex flex-col gap-2 px-4">

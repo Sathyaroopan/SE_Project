@@ -2,7 +2,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 
 export const metadata = {
-  title: "Intelligent Academic Planner",
+  title: "PrepMate",
   description: "AI-powered academic planning platform",
 };
 

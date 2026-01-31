@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Navbar({ userName }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -33,7 +35,26 @@ export default function Navbar({ userName }) {
 
   return (
     <header className="h-14 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between px-6 bg-bg transition-colors">
-      <h1 className="text-xl font-bold text-text">Academic Planner</h1>
+      <Link href="/" className="flex items-center">
+
+        <Image
+          src="/logo_text_light.png"
+          alt="PrepMate Logo"
+          width={120}
+          height={40}
+          className="block dark:hidden h-8 w-auto"
+          priority
+        />
+        
+        <Image
+          src="/logo_text_dark.png"
+          alt="PrepMate Logo"
+          width={120}
+          height={40}
+          className="hidden dark:block h-8 w-auto"
+          priority
+        />
+      </Link>
 
       <div className="flex items-center gap-4">
         {/* Theme Toggle */}
